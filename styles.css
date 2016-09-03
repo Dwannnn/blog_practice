@@ -1,0 +1,17 @@
+@import url(http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
+
+.container {
+  padding: 50px;
+  text-align: center;
+  font-family: 'Jeju Myeongjo', serif;
+
+}
+
+.col-lg-6 {
+  border-bottom: 1px solid black;
+
+}
+
+h5 {
+    line-height: 2;
+}
