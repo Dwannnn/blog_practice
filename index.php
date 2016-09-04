@@ -30,8 +30,12 @@
 
       <div class="row">
           <div class="col-lg-6 offset-lg-3" id="writing_form">
-
-            <form method="POST" action="1.php" onsubmit="alert(myFunction())">
+            <script>
+            function myFunction() {
+                alert('글이 등록되었습니다.');
+            }
+            </script>
+            <form method="POST" action="1.php" onsubmit="myFunction()">
               <div class="form-group">
                 <label>제목</label>
                 <input type="title" class="form-control" id="title_form" aria-describedby="emailHelp" name="title1">
@@ -42,20 +46,10 @@
                 <textarea class="form-control" id="content_form" rows="8" name="content1"></textarea>
               </div>
               <button type="submit" class="btn btn-primary">글쓰기</button>
-              <script>
-              function myfunction()  {
-               return 'Hello world';
-              }
-              </script>
+
 
             </form>
-            <button onclick="myFunction1()">Click me</button>
-            <script>
-            function myFunction1() {
-                alert('Hello world');
-                // document.getElementById("demo").innerHTML = "Hello World";
-            }
-            </script>
+
 
           </div>
 
