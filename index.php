@@ -11,7 +11,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
-
+  <title>돤의 글</title>
   </head>
   <body>
     <div class="container">
@@ -23,19 +23,20 @@
             하지만, 마냥 좋은 것만도 아니다. <br>
             중요한 건 중심에 '나’가 있는 것. <br>
             <i>과연 나는 오늘 주체적이었는가?</i>
-            <br> <br>
+            <br>
             </h5>
           </div>
       </div>
 
+<!-- blog post -->
       <div class="row">
           <div class="col-lg-6 offset-lg-3" id="writing_form">
             <script>
-            function myFunction() {
+            function newpost() {
                 alert('글이 등록되었습니다.');
             }
             </script>
-            <form method="POST" action="1.php" onsubmit="myFunction()">
+            <form method="POST" action="1.php" onsubmit="newpost()">
               <div class="form-group">
                 <label>제목</label>
                 <input type="title" class="form-control" id="title_form" aria-describedby="emailHelp" name="title1">
@@ -43,73 +44,17 @@
               </div>
               <div class="form-group">
                 <label>내용</label>
-                <textarea class="form-control" id="content_form" rows="8" name="content1"></textarea>
+                <textarea class="form-control" id="content_form" rows="5" name="content1"></textarea>
               </div>
               <button type="submit" class="btn btn-primary">글쓰기</button>
-
-
             </form>
-
-
           </div>
 
+          <?php
+          include '2.php'
+          ?>
       </div>
 
-      <!-- blog post -->
-      <?php
-        /*
-        // connect to mysql
-        $conn = new mysqli("localhost", "root", "ehks7984", "dwanblog");
-          if ($conn->connect_errno) {
-              echo "Failed to connect to MySQL: " . $conn->connect_error;
-          }
-
-        // insert data
-        $title1 = '참새';
-        $content1 = '너구리';
-        $sql = "INSERT INTO posts (title, content) VALUES($GET_[POST], $content1)";
-
-        if($conn->query($sql) === TRUE) {
-          echo "<script type=\"text/javascript\">
-          alert('글이 등록되었습니다.');
-          </script>";}
-        else{
-        echo "오류: ".$sql."<br>".$conn->error;
-
-        }
-        $conn->close();
-        */
-
-          /* if ($conn->query($sql) === TRUE) {
-            echo "<script type=\"text/javascript\">
-            alert('글이 등록되었습니다.');
-            </script>";
-          } else {
-              echo "Error: " . $sql . "<br>" . $conn->error;
-          }
-          */
-
-        // prepare and insert data
-        /* $stmt = $conn->prepare("INSERT INTO table1 (firstname, lastname, email) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $firstname, $lastname, $email);
-
-        // set parameters and execute
-        $firstname = "John";
-        $lastname = "Doe";
-        $email = "john@example.com";
-        $stmt->execute();
-
-        echo "글이 등록되었습니다.";
-
-        $stmt->close();
-        */
-
-
-      /* for($i = 0; $i < 5; $i++){
-          echo file_get_contents("post.html").$i;
-      }
-      */
-      ?>
     </div>
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
